@@ -5,3 +5,7 @@ test('home page', async ({ page }) => {
 
   expect(await page.title()).toBe('JWT Pizza');
 });
+
+test('login',async ({page}) => {
+  await page.locator('body').click()
+})
