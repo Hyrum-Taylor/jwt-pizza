@@ -43,7 +43,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: staging
-      url: https://stage-pizza.byucsstudent.click
+      url: https://stage-climb-5.com
     env:
       version: ${{needs.build.outputs.version}}
     steps:
