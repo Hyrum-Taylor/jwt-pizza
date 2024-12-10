@@ -12,8 +12,16 @@ To answer this, the first thing I did was record loading the JWT-Pizza page on B
 
 From this, it looks like the body says nothing except "GET,HEAD,PUT", which supports my guess about it existing to support the GET request.
 
+Now, I did a google search for OPTIONS, and found the first two sources below. Both sources agree that the pupose of an OPTIONS request is to see what HTTP methods are available for an endpoint. There are a few questions I have at this point:
+- What is a HEAD request? The response includes this as a valid request type
+  - Why does the reponse not say that OPTIONS is available? Both sources showed OPTIONS as being returned as a valid option, but my request in Burp doesn't show that. Maybe because both sources use HTTP/1.1?
+- Why is this neccessary? What happens if this isn't sent?
+- What happens if a request is sent to an invalid endpoint?
+
+
 
 ***Conclusion:***
 
 ***Sources:***
 - https://http.dev/options
+- https://www.youtube.com/watch?v=snZ0qP79VRM
