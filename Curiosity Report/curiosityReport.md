@@ -30,8 +30,8 @@ Now, I did a google search for OPTIONS, and found the first two sources below. B
   - **Lack of OPTIONS**: I couldn't find anything specifically talking about this, but I think it's just that I didn't directly add any OPTIONS options. This is something I could dig into a bit more, but I have a lot more questions and not much time.
     - **HTTP Versions**: I don't think using HTTP/2 instead of HTTP/1.1 is the cause of OPTIONS not being returned in the OPTIONS response: HTTP appears to be just how things are transported, not related to the endpoints on the server
 - **Case: Not Sent**: To answer this, let's just try it out! In Burp Suite, when I turned on intercept and dropped OPTIONS requests, the app appeared to not get the menu GET response at all. Then the answer to the question is that the app just stops getting information from the server if the OPTIONS are not included.
-- **Case: OPTIONS to Invalid Endpoint**: Again, let's just try this out!
-- **Case: Invalid HTTP Type to Valid Endpoint**: Again, let's just try this out!
+- **Case: OPTIONS to Invalid Endpoint**: Again, I just tried in Burp Suite, and I probably should've guessed this, but it returned a 404 Not Found: "unknown endpoint" error.
+- **Case: Invalid HTTP Type to Valid Endpoint**: Again, let's just try this out! I tried sending a PUSH request to the ``` /api/order/menu ``` endpoint
 
 
 ***Conclusion:***
