@@ -17,13 +17,18 @@ Now, I did a google search for OPTIONS, and found the first two sources below. B
 ***Questions - Round 2***
 
 - What is a HEAD request? The response includes this as a valid request type
-  - Why does the reponse not say that OPTIONS is available? Both sources showed OPTIONS as being returned as a valid option, but my request in Burp doesn't show that. Maybe because both sources use HTTP/1.1?
+  - Why does the reponse not say that OPTIONS is available? Both sources showed OPTIONS as being returned as a valid option, but my request in Burp doesn't show that.
+    - Maybe because both sources use HTTP/1.1, but my code uses HTTP/2?
 - Why is this neccessary? What happens if this isn't sent?
 - What happens if a request is sent to an invalid endpoint?
 
 ***Answers - Round 2***
 
-**HTTP Versions**: I don't think using HTTP/2 instead of HTTP/1.1 is the cause of OPTIONS not being returned in the OPTIONS response: HTTP appears to be just how things are transported, not related to the endpoints on the server
+
+- **Head Requests**: HEAD requests essentially get only the header of the resource. This is useful for not transfering large amounts of data if it is not neccessary, and for checking to make sure the resource exists (which appears to be the same purpose as the OPTIONS requests).
+  - **Lack of OPTIONS**: I couldn't find anything specifically talking about this, but I think it's just that I didn't directly add any OPTIONS options. This is something I could dig into a bit more, but I have a lot more questions and not much time.
+    - **HTTP Versions**: I don't think using HTTP/2 instead of HTTP/1.1 is the cause of OPTIONS not being returned in the OPTIONS response: HTTP appears to be just how things are transported, not related to the endpoints on the server
+- To answer this, let's just try it out!
 
 
 ***Conclusion:***
@@ -32,3 +37,4 @@ Now, I did a google search for OPTIONS, and found the first two sources below. B
 1) https://http.dev/options
 2) https://www.youtube.com/watch?v=snZ0qP79VRM
 3) https://dev.to/accreditly/http1-vs-http2-vs-http3-2k1c
+4) https://stackoverflow.com/questions/29954037/why-is-an-options-request-sent-and-can-i-disable-it
