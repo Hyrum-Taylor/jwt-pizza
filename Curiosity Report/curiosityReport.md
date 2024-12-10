@@ -21,6 +21,7 @@ Now, I did a google search for OPTIONS, and found the first two sources below. B
     - Maybe because both sources use HTTP/1.1, but my code uses HTTP/2?
 - Why is this neccessary? What happens if this isn't sent?
 - What happens if a request is sent to an invalid endpoint?
+- What happens if an invalid request is sent to a valid endpoint?
 
 ***Answers - Round 2***
 
@@ -28,7 +29,9 @@ Now, I did a google search for OPTIONS, and found the first two sources below. B
 - **Head Requests**: HEAD requests essentially get only the header of the resource. This is useful for not transfering large amounts of data if it is not neccessary, and for checking to make sure the resource exists (which appears to be the same purpose as the OPTIONS requests).
   - **Lack of OPTIONS**: I couldn't find anything specifically talking about this, but I think it's just that I didn't directly add any OPTIONS options. This is something I could dig into a bit more, but I have a lot more questions and not much time.
     - **HTTP Versions**: I don't think using HTTP/2 instead of HTTP/1.1 is the cause of OPTIONS not being returned in the OPTIONS response: HTTP appears to be just how things are transported, not related to the endpoints on the server
-- To answer this, let's just try it out!
+- **Case: Not Sent**: To answer this, let's just try it out! In Burp Suite, when I turned on intercept and dropped OPTIONS requests, the app appeared to not get the menu GET response at all. Then the answer to the question is that the app just stops getting information from the server if the OPTIONS are not included.
+- **Case: OPTIONS to Invalid Endpoint**: Again, let's just try this out!
+- **Case: Invalid HTTP Type to Valid Endpoint**: Again, let's just try this out!
 
 
 ***Conclusion:***
