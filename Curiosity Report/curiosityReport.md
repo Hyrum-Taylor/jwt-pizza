@@ -36,6 +36,8 @@ Now, I did a google search for OPTIONS, and found the first two sources below. B
 
 ***Conclusion:***
 
+This curiosity project helped me understand better some of the behind-the-scenes work that has been put into the application and HTTP protocols. I also became a lot more comfortable using Burp suite to examine websites, and I will be able to use this to satisfy my curiosity in the future.
+
 ***Sources:***
 1) https://http.dev/options
 2) https://www.youtube.com/watch?v=snZ0qP79VRM
