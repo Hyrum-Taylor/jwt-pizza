@@ -49,3 +49,17 @@
 - BAD - Was able to create a new account with the same users.
 - GOOD - Was not able to see original user’s orders. Was not able to log in again with the new account. Did not overwrite original account.
 - BAD - By checking if able to log in again, exposes if a given email has been used on the website before.
+
+
+## **Peer Attack - Stephen (TA) attacking my website**
+
+
+### Attack - SQL injection
+- GOOD - secure
+
+### Attack - Default credentials
+- GOOD - default password was changed for Admin
+- BAD - default password was not changed for Franchisee
+
+### Attack - Pizza prices can be chosen from the user side
+- GOOD - Prices changed to be found from database, not from user. Secure as far as we could tell
