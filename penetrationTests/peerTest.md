@@ -20,6 +20,10 @@
 - POSSIBLE HACKS - Full unrestricted access to the database for anyone who has an account.
 - FIX - Updated code to use built-in data sanitation functions
 
+### BUG - Admin username/password are automatically generated, not automatically updated
+- POSSIBLE HACKS - Full unrestricted access to everything for anyone who finds them from the code
+- FIX - Changed admin credentials to not be the defaults
+
 
 ## **Peer Attack - Hyrum attacking pizza.cs329.click**
 
